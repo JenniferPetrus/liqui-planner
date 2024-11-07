@@ -37,7 +37,7 @@ const haushaltsbuch = {
         this.eintraege.forEach(function(eintrag) {
             console.log(`Titel: ${eintrag.get("titel")}\n`
                 + `Typ: ${eintrag.get("typ")}\n`
-                + `Betrag: ${eintrag.get("betrag")} ct\n`
+                + `Betrag: ${(eintrag.get("betrag") / 100).toFixed(2)} ct\n`
                 + `Datum: ${eintrag.get("datum").toLocaleDateString("de-DE", {
                     year: "numeric",
                     month: "2-digit",
