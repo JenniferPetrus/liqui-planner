@@ -37,7 +37,7 @@ const haushaltsbuch = {
         this.eintraege.forEach(function(eintrag) {
             console.log(`Titel: ${eintrag.get("titel")}\n`
                 + `Typ: ${eintrag.get("typ")}\n`
-                + `Betrag: ${(eintrag.get("betrag") / 100).toFixed(2)} ct\n`
+                + `Betrag: ${(eintrag.get("betrag") / 100).toFixed(2)} €\n`
                 + `Datum: ${eintrag.get("datum").toLocaleDateString("de-DE", {
                     year: "numeric",
                     month: "2-digit",
@@ -71,10 +71,10 @@ const haushaltsbuch = {
     },
 
     gesamtbilanz_ausgeben(){
-        console.log(`Einnahmen: ${this.gesamtbilanz.get("einnahmen")} ct\n`
-            + `Ausgaben: ${this.gesamtbilanz.get("ausgaben")} ct\n`
-            + `Bilanz: ${this.gesamtbilanz.get("bilanz")} ct\n`
-            + `Bilanz ist positiv: ${this.gesamtbilanz.get("bilanz") >= 0}`
+        console.log(`Einnahmen: ${(this.gesamtbilanz.get("einnahmen") / 100).toFixed(2)} €\n`
+            + `Ausgaben: ${(this.gesamtbilanz.get("ausgaben") / 100).toFixed(2)} €\n`
+            + `Bilanz: ${(this.gesamtbilanz.get("bilanz") / 100).toFixed(2)} €\n`
+            + `Bilanz ist positiv: ${(this.gesamtbilanz.get("bilanz") / 100) >= 0}`
         );
     },
 
